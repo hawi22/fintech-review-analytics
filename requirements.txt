@@ -1,13 +1,7 @@
 google-play-scraper
 pandas
-numpy
+nltk
 sqlalchemy
 psycopg2-binary
-nltk
-spacy
-transformers
-torch
 matplotlib
 seaborn
-scikit-learn
-datetime
