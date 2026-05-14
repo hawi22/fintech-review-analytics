@@ -17,7 +17,7 @@ def scrape_bank_reviews():
         # scrape 500 to ensure we have >400 after cleaning duplicates
         result, _ = reviews(
             app_id,
-            lang='en', # Reviews are often in English or Amharic (Latin script)
+            lang='en',
             country='us', 
             sort=Sort.NEWEST,
             count=500 
