@@ -30,7 +30,7 @@ def perform_analysis():
 
     # 3. Themes
     stop_words = set(stopwords.words('english'))
-    # Added more stop words to get BETTER themes
+    
     stop_words.update(['app', 'bank', 'banking', 'cbe', 'boa', 'dashen', 'good', 'nice', 'please', 'money', 'worst', 'ever', 'even', 'time'])
     
     def get_keywords(text):
@@ -53,11 +53,11 @@ def perform_analysis():
             mask = (df['bank'] == bank) & (df['review_text'].str.contains(top_word, case=False))
             df.loc[mask, 'identified_theme'] = f"Issue: {top_word}"
 
-    # 4. Final selection - including bank and date for Task 3
-    # Note: We need bank and rating for the database later
+    # 4. Final selection - 
+    
     df.to_csv('data/analyzed_reviews.csv', index=False)
     
-    # Create the specialized task-2 output file for the evaluators
+
     task2_output = df[['review_id', 'review_text', 'sentiment_label', 'sentiment_score', 'identified_theme']]
     task2_output.to_csv('data/task2_final_output.csv', index=False)
     
