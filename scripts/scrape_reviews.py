@@ -33,11 +33,10 @@ def scrape_bank_reviews():
                 'source': 'Google Play'
             })
             
-    return pd.DataFrame(all_reviews)
-
-if __name__ == "__main__":
-    df = scrape_bank_reviews()
-    # Create data directory if not exists
+    df = pd.DataFrame(all_reviews)
     os.makedirs('data/raw', exist_ok=True)
     df.to_csv('data/raw/raw_reviews.csv', index=False)
-    print(f"Successfully scraped {len(df)} reviews.")
+    print(f"Done! Saved {len(df)} raw reviews.")
+
+if __name__ == "__main__":
+    scrape_bank_reviews()

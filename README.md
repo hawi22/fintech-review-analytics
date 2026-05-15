@@ -34,3 +34,11 @@ To ensure data quality, the following steps were performed using `pandas`:
 - **Rate Limiting:** While `google-play-scraper` is efficient, scraping larger volumes (10,000+) would require request throttling to avoid IP blocks.
 - **Language Barrier:** A small portion of reviews are written in Amharic using Latin script or Ge'ez script. The current NLP pipeline is optimized for English, which may lead to "Neutral" sentiment scores for non-English text.
 - **Store Limitation:** This analysis only covers Android users (Google Play). iOS (App Store) reviews are not included in this dataset.
+
+## Task 2: Sentiment and Thematic Analysis
+
+### Methodology
+- **Sentiment Analysis:** Utilized the `VADER` (Valence Aware Dictionary and sEntiment Reasoner) lexicon. 
+- **Rationale:** VADER is specifically tuned for social media and review text. It was selected over DistilBERT to ensure compatibility with Python 3.14 and to handle environment-specific SSL restrictions.
+- **Thematic Analysis:** Performed keyword frequency distribution using `NLTK`.
+- **Classification:** Focused on Negative reviews to identify specific "Pain Points" for each bank (e.g., Transfer issues, Login failures).
